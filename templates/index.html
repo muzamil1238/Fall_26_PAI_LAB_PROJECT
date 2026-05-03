@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Optimizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-rocket"></i> Secure GenAI Resume Optimizer</h1>
+        <p class="subtitle">Transform your resume with AI-powered analysis and interview coaching</p>
+
+        <div class="upload-section">
+            <h2><i class="fas fa-upload"></i> Upload Your Resume</h2>
+            <form id="uploadForm" enctype="multipart/form-data">
+                <input type="file" name="resume" accept=".pdf" required>
+                <button type="submit">
+                    <i class="fas fa-magic"></i> Analyze Resume
+                </button>
+            </form>
+        </div>
+
+        <div id="results" class="dashboard"></div>
+
+        <div class="interview-box">
+            <h2><i class="fas fa-microphone"></i> Mock Interview Practice</h2>
+            <textarea id="answerText" placeholder="Speak or write your answer here..."></textarea>
+            <div class="voice-controls">
+                <button onclick="startVoice()">
+                    <i class="fas fa-microphone"></i> Record Voice
+                </button>
+                <button onclick="submitAnswer()">
+                    <i class="fas fa-brain"></i> Get AI Feedback
+                </button>
+            </div>
+            <div id="feedbackResult"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
